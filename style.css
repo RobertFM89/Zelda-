@@ -1,0 +1,235 @@
+@font-face {
+    font-family: "The Wild Breath of Zelda";
+    src: url("source/The Wild Breath of Zelda.otf")
+}
+
+body {
+    margin: 0;
+    font-size: 120%;
+    font-family: "The Wild Breath of Zelda";
+    background-color: transparent;
+    background-image: url('source/anime-style-mountains-landscape.jpg');
+    height: 100%; 
+    
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover;
+    color: #fff;
+    padding: 2em;
+}
+
+body::before {
+    content: '';
+    background:rgba(238, 100, 20, 0.158);
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    position: fixed;
+
+}
+
+
+
+h1 {
+    text-align: center;
+    font-size: 15em;
+    -webkit-text-stroke: 2px rgba(9, 16, 117, 0.418);
+    color: rgba(255, 255, 255, 0.877);
+}
+
+.timeline {
+    margin: 5em auto;
+    max-width: 34.15em;;
+}
+
+.event {
+    max-width: 34em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    position: relative;
+    view-timeline-name: --image;
+    view-timeline-axis: block;
+
+    animation-timeline: --image;
+    animation-name: show;
+
+    animation-range: entry 25% cover 50%;
+    animation-fill-mode: both;
+}
+
+.event-info {
+    border: 2px solid #ffffff;
+    border-radius: 1em;
+    padding: 1.5em;
+}
+
+.h2 {
+    display:flex;
+    justify-content: center;
+    line-height: 27px;
+    color: #ffffff;
+}
+
+.h3 {
+    display:flex;
+    justify-content: center; 
+}
+
+div.event-info{
+    display: block;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.image {
+   display:flex;
+   justify-content: center;
+   view-timeline-name: --image;
+    view-timeline-axis: block;
+
+    animation-timeline: --image;
+    animation-name: show;
+
+    animation-range: entry 25% cover 50%;
+    animation-fill-mode: both;
+   
+}
+
+.class-image {
+    margin: auto;
+    border-radius: 20px;
+    
+}
+
+
+
+.event:nth-child(even) {
+    border-left: 3px solid #ffffff;
+    padding-left: 3em;
+    transform: translateX(17em);
+}
+
+.event:nth-child(odd) {
+    border-right: 3px solid #ffffff;
+    padding-right: 3em;
+    transform: translateX(-17em);
+}
+
+.event:nth-child(even)::before,
+.event:nth-child(odd)::before {
+    content: '';
+    background: #ffffff;
+    width: 3em;
+    height: 3px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.event:nth-child(even)::before {
+    left: 0;
+}
+
+.event:nth-child(odd)::before {
+    right: 0;
+}
+
+.event:nth-child(even) div::before,
+.event:nth-child(odd) div::before {
+    content: '';
+    background: #fff;
+    box-shadow: 0 0 0.5em #d85a0510;
+    width: 0.8em;
+    height: 0.8em;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50px;
+}
+
+.event:nth-child(even) div::before {
+    left: -0.5em;
+}
+
+.event:nth-child(odd) div::before {
+    right: -0.5em;
+}
+
+#addGame{
+    background: radial-gradient(rgba(72, 117, 29, 0.63), rgba(26, 99, 32, 0.171));
+    display: flex;
+    flex-direction: column;
+    background-color: #bca58f79;
+    padding: 20px;
+    border-radius: 15px;
+}
+label{
+    text-align: center;
+    color: #fffefdc0;
+}
+input{
+    margin: 10px 0;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+}
+textarea{
+    margin: 10px 0;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+}
+button{
+    background: radial-gradient(rgba(40, 88, 7, 0.863), rgba(102, 145, 96, 0.404));
+    color: rgb(236, 243, 195);
+    font-family: "The Wild Breath of Zelda";
+    font-size: 1.5em;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+header h2 {
+    -webkit-text-stroke: 2px rgba(22, 83, 153, 0.548);
+}
+
+@keyframes show {
+    from {
+        opacity: 0.2;
+        scale: 40%
+    }
+    
+    to {
+        opacity: 1;
+        scale: 100%;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .timeline {
+        width: 80vw;
+    }
+    .timeline .event {
+        width: 100%;
+        transform: none;
+        padding-left: 0;
+        padding-right: 0;
+        border: none;
+    }
+    .timeline .event::before {
+        width: 3px;
+        height: 4em;
+        top: -2em;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .timeline .event div::before {
+        top: -0.5em;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
